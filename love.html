@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>520快乐，亲爱的！</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #ffe6f0, #ffccf2);
+      font-family: 'Comic Sans MS', '幼圆', cursive;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .heartBox {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      transform: translate(-50%, -50%);
+    }
+
+    .myHeart {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform: rotate(45deg);
+      animation: heartMove 8s infinite ease-in-out;
+    }
+
+    .myHeart div {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: #ff99cc;
+    }
+
+    .one {
+      left: 0;
+      bottom: 0;
+      border-radius: 50%;
+    }
+
+    .two {
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+    }
+
+    .three {
+      top: 0;
+      right: 0;
+      transform: rotate(45deg);
+      width: 200px;
+      height: 200px;
+      background: #ff66a3;
+      border-radius: 30%;
+      opacity: 0.8;
+    }
+
+    .myHeart p {
+      position: absolute;
+      bottom: 90px;
+      right: 0;
+      transform: rotate(-45deg);
+      width: 200px;
+      text-align: center;
+      font-size: 22px;
+      color: #ff3399;
+      text-shadow: 0 0 10px white;
+    }
+
+    @keyframes heartMove {
+      0%, 100% {
+        transform: rotate(45deg) scale(1);
+      }
+      50% {
+        transform: rotate(45deg) scale(1.2);
+      }
+    }
+
+    .message {
+      position: absolute;
+      bottom: 40px;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      color: #ff3399;
+      text-shadow: 0 0 4px white;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 漂浮爱心 */
+    .floating-heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ffb6c1;
+      transform: rotate(45deg);
+      animation: float 10s linear infinite;
+      opacity: 0.6;
+    }
+
+    .floating-heart::before,
+    .floating-heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ffb6c1;
+      border-radius: 50%;
+    }
+
+    .floating-heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .floating-heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heartBox">
+    <div class="myHeart">
+      <div class="one"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+      <p>520快乐，宝贝！</p>
+    </div>
+  </div>
+
+  <div class="message">你是我心中最软的一块糖~</div>
+
+  <!-- 生成一些随机漂浮爱心 -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDelay = Math.random() * 10 + "s";
+      heart.style.animationDuration = 6 + Math.random() * 5 + "s";
+      heart.style.opacity = 0.3 + Math.random() * 0.5;
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
