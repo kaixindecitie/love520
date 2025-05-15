@@ -1,0 +1,38 @@
+
+#control-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 240, 250, 0.95);
+  border: 1px solid #f4b6cc;
+  padding: 12px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 192, 203, 0.6);
+  z-index: 10001; /* 高于弹窗 */
+  font-family: '微软雅黑', sans-serif;
+  width: 220px;
+}
+
+#control-panel button {
+  margin: 5px 3px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff69b4;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s;
+}
+
+#control-panel button:hover {
+  background-color: #ff85c1;
+}
+
+#click-status {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.4;
+}

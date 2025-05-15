@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>切水果游戏</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <div class="game-container">
+    <canvas id="gameCanvas"></canvas>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let fruits = [];
+    let score = 0;
+
+    // 简单的水果类
+    class Fruit {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = canvas.height;
+        this.radius = 20;
+        this.speed = Math.random() * 5 + 3;
+        this.type = Math.random() > 0.5 ? 'fruit' : 'bomb';
+      }
+
+      // 更新水果位置
+      update() {
+        this.y -= this.speed;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.type === 'fruit' ? 'orange' : 'red';
+        ctx.fill();
+        ctx.closePath();
+      }
+    }
+
+    // 游戏主循环
+    function gameLoop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < fruits.length; i++) {
+        fruits[i].update();
+        if (fruits[i].y < 0) fruits.splice(i, 1);
+      }
+      requestAnimationFrame(gameLoop);
+    }
+
+    // 启动游戏
+    setInterval(() => {
+      fruits.push(new Fruit());
+    }, 1000);
+
+    // 捕捉切水果操作
+    canvas.addEventListener('click', function (e) {
+      const x = e.clientX;
+      const y = e.clientY;
+      fruits.forEach((fruit, index) => {
+        const dist = Math.sqrt(Math.pow(x - fruit.x, 2) + Math.pow(y - fruit.y, 2));
+        if (dist < fruit.radius) {
+          if (fruit.type === 'fruit') score++;
+          fruits.splice(index, 1);
+        }
+      });
+    });
+
+    // 启动游戏循环
+    gameLoop();
+  </script>
+</body>
+</html>

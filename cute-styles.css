@@ -1,0 +1,218 @@
+﻿/* 可爱文字风格CSS */
+/* 导入可爱字体 */
+/* 在styles.css中 */
+
+@font-face {
+    font-family: 'Fredoka One';
+    src: url('XiangJiaoKuanMaoShuaLingGanTi-2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url('yt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 声明其他字体... */
+
+/* 使用这些字体 */
+.cute-title {
+    font-family: 'Fredoka One', cursive;
+    /* 其他样式 */
+}
+
+.cute-quote {
+    font-family: 'Dancing Script', cursive;
+    /* 其他样式 */
+}
+
+/* 基础可爱文字样式 */
+.cute-text {
+    font-family: 'Comic Neue', cursive;
+    color: #FF4B91;
+    text-shadow: 2px 2px 4px rgba(255, 75, 145, 0.2);
+}
+
+/* 可爱标题样式 */
+.cute-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #FF4B91;
+    text-shadow: 3px 3px 0px rgba(255, 209, 218, 0.8), 
+                 5px 5px 0px rgba(255, 155, 155, 0.5);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5em;
+}
+
+/* 装饰性下划线 */
+.cute-underline {
+    position: relative;
+}
+.cute-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 8px;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='10' viewBox='0 0 100 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5 Q25 15, 50 5 T100 5' stroke='%23FF4B91' fill='none' stroke-width='2'/%3E%3C/svg%3E") repeat-x;
+    background-size: 20px 10px;
+}
+
+/* 可爱文字渐变 */
+.cute-gradient {
+    background: linear-gradient(45deg, #FF4B91, #FF9B9B, #FFD1DA);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* 气泡文字效果 */
+.bubble-text {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: rgba(255, 209, 218, 0.8);
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #C63D6F;
+    box-shadow: 0 4px 6px rgba(255, 75, 145, 0.1);
+}
+.bubble-text::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid rgba(255, 209, 218, 0.8);
+    border-left: 10px solid transparent;
+}
+
+/* 悬停时的可爱动画效果 */
+.hover-cute {
+    transition: all 0.3s ease;
+}
+.hover-cute:hover {
+    transform: translateY(-5px) scale(1.05);
+    text-shadow: 3px 3px 6px rgba(255, 75, 145, 0.3);
+}
+
+/* 可爱的字符间隔 */
+.cute-spacing {
+    letter-spacing: 0.2em;
+}
+
+/* 闪烁文字效果 */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+.blink-text {
+    animation: blink 2s infinite;
+}
+
+/* 文字弹跳动画 */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.bounce-text {
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+.bounce-text span:nth-child(1) { animation-delay: 0.1s; }
+.bounce-text span:nth-child(2) { animation-delay: 0.2s; }
+.bounce-text span:nth-child(3) { animation-delay: 0.3s; }
+.bounce-text span:nth-child(4) { animation-delay: 0.4s; }
+.bounce-text span:nth-child(5) { animation-delay: 0.5s; }
+
+/* 可爱标记符号 */
+.cute-marker {
+    position: relative;
+}
+.cute-marker::before {
+    content: "✨";
+    margin-right: 0.3em;
+}
+.cute-marker::after {
+    content: "✨";
+    margin-left: 0.3em;
+}
+
+/* 可爱的按钮文字 */
+.cute-button {
+    background-color: #FF4B91;
+    color: white;
+    padding: 0.7em 1.5em;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 0px #C63D6F;
+    transition: all 0.2s ease;
+}
+.cute-button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0px #C63D6F;
+}
+.cute-button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* 可爱的输入框文字提示 */
+.cute-input {
+    border: 2px solid #FFD1DA;
+    border-radius: 15px;
+    padding: 0.7em 1em;
+    font-family: 'Poppins', sans-serif;
+    color: #C63D6F;
+    transition: all 0.3s ease;
+}
+.cute-input:focus {
+    outline: none;
+    border-color: #FF4B91;
+    box-shadow: 0 0 0 3px rgba(255, 75, 145, 0.2);
+}
+.cute-input::placeholder {
+    color: rgba(255, 155, 155, 0.6);
+}
+
+/* 可爱的列表样式 */
+.cute-list li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+.cute-list li::before {
+    content: "💖";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(0.8);
+}
+
+/* 可爱的引用块 */
+.cute-quote {
+    background-color: rgba(255, 209, 218, 0.3);
+    border-left: 5px solid #FF4B91;
+    padding: 1em;
+    border-radius: 0 10px 10px 0;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+    color: #C63D6F;
+}
+
+/* 响应式文字大小 */
+@media (max-width: 640px) {
+    .cute-title {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+}    

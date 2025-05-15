@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>恐龙跳跃游戏</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    #dinoGameCanvas {
+      background-color: #f0f0f0;
+      display: block;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="dinoGameCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('dinoGameCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // 恐龙变量
+    const dino = {
+      x: 50,
+      y: canvas.height - 100,
+      width: 50,
+      height: 50,
+      speedY: 0,
+      gravity: 0.5,
+      jumpPower: -15,
+      isJumping: false,
+    };
+
+    // 障碍物变量
+    let obstacles = [];
+    let score = 0;
+
+    function gameLoop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      dino.y += dino.speedY;
+      dino.speedY += dino.gravity;
+
+      // 恐龙跳跃控制
+      if (dino.y > canvas.height - 100) {
+        dino.y = canvas.height - 100;
+        dino.isJumping = false;
+        dino.speedY = 0;
+      }
+
+      if (dino.isJumping) {
+        dino.speedY = dino.jumpPower;
+      }
+
+      // 绘制恐龙
+      ctx.fillStyle = '#8b4513';
+      ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
+
+      // 绘制障碍物
+      obstacles.forEach((obstacle, index) => {
+        obstacle.x -= 5;
+        ctx.fillStyle = '#333';
+        ctx.fillRect(obstacle.x, canvas.height - 60, 30, 60);
+        if (obstacle.x < -30) obstacles.splice(index, 1);
+      });
+
+      // 碰撞检测
+      obstacles.forEach((obstacle) => {
+        if (
+          dino.x + dino.width > obstacle.x &&
+          dino.x < obstacle.x + 30 &&
+          dino.y + dino.height > canvas.height - 60
+        ) {
+          alert(`游戏结束! 得分：${score}`);
+          resetGame();
+        }
+      });
+
+      // 随机生成障碍物
+      if (Math.random() < 0.01) {
+        obstacles.push({ x: canvas.width });
+        score++;
+      }
+
+      // 分数显示
+      ctx.fillStyle = '#000';
+      ctx.font = '20px Arial';
+      ctx.fillText(`得分：${score}`, 20, 30);
+
+      requestAnimationFrame(gameLoop);
+    }
+
+    // 恐龙跳跃事件
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && !dino.isJumping) {
+        dino.isJumping = true;
+      }
+    });
+
+    // 游戏重置
+    function resetGame() {
+      score = 0;
+      obstacles = [];
+      dino.y = canvas.height - 100;
+      dino.isJumping = false;
+      dino.speedY = 0;
+      gameLoop();
+    }
+
+    // 开始游戏
+    gameLoop();
+  </script>
+</body>
+</html>

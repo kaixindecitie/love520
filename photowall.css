@@ -1,0 +1,40 @@
+.photo-wall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  background-color: #fff0f5; /* 淡粉背景，浪漫 */
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.photo-frame {
+  width: 150px;
+  height: 200px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.5);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.photo-frame:hover {
+  transform: scale(1.05);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #ffc0cb;
+}
+
+.photo-frame p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #d63384;
+  font-weight: bold;
+}

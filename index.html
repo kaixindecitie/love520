@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 添加视口元标签，实现响应式布局 -->
+    <meta name="description" content="这是送宝贝的520礼物，包含浪漫的动画效果"> <!-- 添加描述元标签，用于搜索引擎优化 -->
+    <title>这是送宝贝的520礼物</title>
+    <link rel="stylesheet" href="heart.css">
+    <link rel="stylesheet" href="cute-styles.css">
+	<link rel="stylesheet" href="photowall.css">
+	
+	<link rel="stylesheet" href="popup-enhanced.css">
+	
+	
+</head>
+<body>
+	
+    <div class="heart-container"></div>
+    <div class="container">
+		
+        <h1 class="cute-title">做了一个网站送给小宝～</h1>
+		
+
+<div class="photo-wall" >
+  <div class="photo-frame">
+    <img src="photos/photo1.jpg" >
+    <p class="cute-quote">大家好</p>
+  </div>
+  <div class="photo-frame">
+    <img src="photos/photo2.jpg" >
+    <p class="cute-quote">我是郭子晔</p>
+  </div>
+  <div class="photo-frame">
+    <img src="photos/photo3.JPG" >
+    <p class="cute-quote">我对象是闫天元</p>
+  </div>
+	<div class="photo-frame">
+    <img src="photos/photo4.JPG" >
+    <p class="cute-quote">他是傻缺</p>
+  </div>
+	<div class="photo-frame">
+    <img src="photos/photo5.HEIC" >
+    <p class="cute-quote">他是我的小狗</p>
+  </div>
+	<div class="photo-frame">
+    <img src="photos/photo6.JPG" >
+    <p class="cute-quote">我们是一对</p>
+  </div>
+  <!-- 继续添加更多照片 -->
+</div>
+        <p class="cute-quote">给宝贝简单写个情书</p>
+		
+	</div><div>
+ <a href="about-her.html" class="cute-quote">下一页 👉</a>
+    </div>
+    <script src="heart.js"></script>
+	<script src="click-popup.js"></script>
+	<audio id="bg-music" loop>
+	<source src="music/love-song-1.mp3" type="audio/mpeg">
+		<source src="music/love-song-2.mp3" type="audio/mpeg">
+		<source src="music/love-song-1.mp3" type="audio/mpeg">
+  </audio>
+	<!-- 所有功能脚本建议这样排 -->
+
+</body>
+	<!-- 音乐播放器 -->
+
+
+<!-- 控制面板 -->
+<div id="control-panel">
+  <div style="margin-bottom: 8px;" id="song-title">🎶 当前：加载中</div>
+  <input type="range" id="music-progress" value="0" max="100" step="0.1" style="width: 100%;">
+  <div style="margin-top: 8px;">
+    <button id="music-toggle">🎵 播放音乐</button>
+    <button id="next-song">⏭️ 下一首</button>
+    <button id="popup-toggle">💌 点520情话</button>
+	  <button id="popup-close">🛑 关闭弹窗</button>
+<button id="flash-through">⚡ 快闪播放</button>
+  </div>
+  <span id="click-status">已点击 0 次 / 共 520</span>
+</div>
+	  <!-- 新增关闭+快闪功能 -->
+	<script src="heart.js"></script>
+<script src="click-popup-enhanced.js"></script>
+<script src="music-control.js"></script>
+<script src="music-control-extra.js"></script>
+</html>
