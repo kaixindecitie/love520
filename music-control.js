@@ -39,14 +39,17 @@ nextBtn.addEventListener("click", function () {
 // 播放进度控制
 music.addEventListener("timeupdate", function () {
     progress.value = (music.currentTime / music.duration) * 100 || 0;
+
+    // 如果接近结尾，手动触发切歌（防止 ended 事件被浏览器忽略）
+    if (music.duration - music.currentTime < 0.3 && !music._almostEnded) {
+        music._almostEnded = true;
+        playNextSong();
+    }
 });
 
-// 修改：播放完一首后自动播放下一首，最后一首后回到第一首
-music.addEventListener("ended", function () {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
-    music.src = songs[currentSongIndex].file;
-    songTitle.textContent = `🎶 当前：${songs[currentSongIndex].name}`;
-    playMusic();
+// 重置标志位，当播放新歌时
+music.addEventListener("play", function () {
+    music._almostEnded = false;
 });
 
 progress.addEventListener("input", function () {
@@ -117,4 +120,27 @@ flashBtn.addEventListener("click", function () {
 closeBtn.addEventListener("click", function () {
     popupEnabled = false;
     document.getElementById("click-status").textContent = "💤 情话已关闭，可随时重启";
+});
+
+// 新增：自动播放下一首的处理函数
+function handleAutoPlay() {
+    music.play().then(() => {
+        isMusicPlaying = true;
+        updatePlayButton();
+    }).catch(error => {
+        console.error("自动播放下一首失败:", error);
+    });
+}
+// 监听歌曲播放结束，自动切换下一首
+music.addEventListener("ended", function () {
+    playNextSong();
+});
+music.addEventListener("timeupdate", function () {
+    progress.value = (music.currentTime / music.duration) * 100 || 0;
+
+    // 若接近末尾（例如播放到了 99.9%），当作播放结束
+    if (music.duration - music.currentTime < 0.5 && !music._almostEnded) {
+        music._almostEnded = true;
+        playNextSong();
+    }
 });

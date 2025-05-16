@@ -8,13 +8,9 @@
     <link rel="stylesheet" href="heart.css">
     <link rel="stylesheet" href="cute-styles.css">
 	<link rel="stylesheet" href="photowall.css">
-	
-	
-	
-	
 </head>
 <body>
-	
+	<div class="background-overlay"></div>
     <div class="heart-container"></div>
     <div class="container">
 		
@@ -22,29 +18,71 @@
 		
 
 <div class="photo-wall" >
-  <div class="photo-frame">
-    <img src="photos/photo1.JPG" >
-    <p class="cute-quote">大家好</p>
+  <div class="photo-card">
+    <div class="photo-card-inner">
+      <div class="photo-card-front">
+        <img src="photos/photo1.JPG" >
+        <p class="cute-quote">大家好</p>
+      </div>
+      <div class="photo-card-back">
+        <p class="blessing-text"></p>
+      </div>
+    </div>
   </div>
-  <div class="photo-frame">
-    <img src="photos/photo2.JPG" >
-    <p class="cute-quote">我是郭子晔</p>
+  <div class="photo-card">
+    <div class="photo-card-inner">
+      <div class="photo-card-front">
+        <img src="photos/photo2.JPG" >
+        <p class="cute-quote">我是郭子晔</p>
+      </div>
+      <div class="photo-card-back">
+        <p class="blessing-text"></p>
+      </div>
+    </div>
   </div>
-  <div class="photo-frame">
-    <img src="photos/photo3.JPG" >
-    <p class="cute-quote">我对象是闫天元</p>
+  <div class="photo-card">
+    <div class="photo-card-inner">
+      <div class="photo-card-front">
+        <img src="photos/photo3.JPG" >
+        <p class="cute-quote">我对象是闫天元</p>
+      </div>
+      <div class="photo-card-back">
+        <p class="blessing-text"></p>
+      </div>
+    </div>
   </div>
-	<div class="photo-frame">
-    <img src="photos/photo4.JPG" >
-    <p class="cute-quote">他是傻缺</p>
+	<div class="photo-card">
+    <div class="photo-card-inner">
+      <div class="photo-card-front">
+        <img src="photos/photo4.JPG" >
+        <p class="cute-quote">他是傻缺</p>
+      </div>
+      <div class="photo-card-back">
+        <p class="blessing-text"></p>
+      </div>
+    </div>
   </div>
-	<div class="photo-frame">
-    <img src="photos/photo5.HEIC" >
-    <p class="cute-quote">他很爱我</p>
+	<div class="photo-card">
+    <div class="photo-card-inner">
+      <div class="photo-card-front">
+        <img src="photos/photo5.HEIC" >
+        <p class="cute-quote">他很爱我</p>
+      </div>
+      <div class="photo-card-back">
+        <p class="blessing-text"></p>
+      </div>
+    </div>
   </div>
-	<div class="photo-frame">
-    <img src="photos/photo6.JPG" >
-    <p class="cute-quote">我们是一对</p>
+	<div class="photo-card">
+    <div class="photo-card-inner">
+      <div class="photo-card-front">
+        <img src="photos/photo6.JPG" >
+        <p class="cute-quote">我们是一对</p>
+      </div>
+      <div class="photo-card-back">
+        <p class="blessing-text"></p>
+      </div>
+    </div>
   </div>
   <!-- 继续添加更多照片 -->
 </div>
@@ -57,7 +95,7 @@
 	<audio id="bg-music" loop>
 	<source src="music/love-song-1.mp3" type="audio/mpeg">
 		<source src="music/love-song-2.mp3" type="audio/mpeg">
-		<source src="music/love-song-1.mp3" type="audio/mpeg">
+		<source src="music/love-song-3.mp3" type="audio/mpeg">
   </audio>
 	<!-- 所有功能脚本建议这样排 -->
 
@@ -76,6 +114,6 @@
   
 	  <!-- 新增关闭+快闪功能 -->
 	<script src="heart.js"></script>
-
+  <script src="photowall.js"></script>
 <script src="music-control.js"></script>
 </html>
