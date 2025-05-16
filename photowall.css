@@ -8,6 +8,8 @@
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 182, 193, 0.3); /* 添加淡粉色边框以保持可读性 */
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .photo-frame {
@@ -99,4 +101,38 @@
 @keyframes explode {
   0% { transform: scale(0); opacity: 1; }
   100% { transform: scale(3); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .photo-wall {
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .photo-frame {
+    width: 120px;
+    height: 160px;
+  }
+
+  .photo-frame img {
+    height: 120px;
+  }
+
+  .photo-frame p {
+    font-size: 12px;
+  }
+
+  .photo-card {
+    width: 150px;
+    height: 200px;
+  }
+
+  .photo-card-front img {
+    height: 70%;
+  }
+
+  .photo-card-back {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
