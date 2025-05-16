@@ -1,9 +1,24 @@
-
 document.querySelectorAll('.photo-card').forEach(card => {
 	card.addEventListener('click', () => {
 		card.classList.toggle('flipped');
+		card.classList.add('flip-surprise');
+		setTimeout(() => {
+			card.classList.remove('flip-surprise');
+		}, 1000);
+		checkAllFlipped();
 	});
 });
+
+function checkAllFlipped() {
+	const allFlipped = Array.from(document.querySelectorAll('.photo-card')).every(card => card.classList.contains('flipped'));
+	if (allFlipped) {
+		triggerFinalSurprise();
+	}
+}
+
+function triggerFinalSurprise() {
+	alert("彩蛋触发！给宝宝满满一筐的爱！");
+}
 
 const blessings = [
 	"愿我们的爱永远甜蜜",

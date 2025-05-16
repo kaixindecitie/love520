@@ -89,4 +89,14 @@
 		border-radius: 10px;
 		box-sizing: border-box;
 	}
-	
+  .flip-surprise::after {
+  content: "💖";
+  position: absolute;
+  animation: explode 0.6s ease-out;
+  font-size: 24px;
+}
+
+@keyframes explode {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}

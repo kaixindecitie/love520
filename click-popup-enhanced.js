@@ -1,5 +1,5 @@
 let clickCount = 0;
-const clickThreshold = 520;
+const clickThreshold = 52;
 
 // 520 条不同的有趣鼓励话语
 const loveMessages = [
@@ -561,7 +561,7 @@ document.addEventListener('click', function () {
             <div class="popup-content">
                 <span class="close">&times;</span>
                 <p style="font-size: 20px; color: #d63384; font-weight: bold;">
-                    🎉 520 成就达成！<br>
+                    🎉 52 成就达成！<br>
                     你成功解锁了“世界上最浪漫的人”称号💘<br>
                     永远爱你 ❤️
                 </p>
@@ -578,7 +578,7 @@ document.addEventListener('click', function () {
         popup.innerHTML = `
             <div class="popup-content">
                 <span class="close">&times;</span>
-                <p>${loveMessages[clickCount - 1]}<br><span style="font-size: 16px; color: #888;">（还剩 ${clickThreshold - clickCount} 次点击就完成 520 情话成就！）</span><br><span style="font-size: 16px; color: #d63384;">💕 点着点着，我就又想你了。</span></p>
+                <p>${loveMessages[clickCount - 1]}<br><span style="font-size: 16px; color: #888;">（还剩 ${clickThreshold - clickCount} 次点击就完成 52 情话成就！）</span><br><span style="font-size: 16px; color: #d63384;">💕 点着点着，我就又想你了。</span></p>
             </div>
         `;
 
