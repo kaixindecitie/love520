@@ -41,9 +41,12 @@ music.addEventListener("timeupdate", function () {
     progress.value = (music.currentTime / music.duration) * 100 || 0;
 });
 
-// 新增：监听歌曲结束事件，自动播放下一首
-music.addEventListener("ended", function() {
-    playNextSong();
+// 修改：播放完一首后自动播放下一首，最后一首后回到第一首
+music.addEventListener("ended", function () {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    music.src = songs[currentSongIndex].file;
+    songTitle.textContent = `🎶 当前：${songs[currentSongIndex].name}`;
+    playMusic();
 });
 
 progress.addEventListener("input", function () {
