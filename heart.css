@@ -1,3 +1,7 @@
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
 /* 为爱心效果的容器 */
 .heart-container {
   position: fixed;
@@ -207,6 +211,12 @@
 }    
 body {
   background: linear-gradient(135deg, #ffe4ec, #ffd6f5, #fceeff);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
 }
 .background-overlay {
   position: fixed;
