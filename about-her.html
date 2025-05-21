@@ -6,6 +6,7 @@
   <title>我们的故事 · 520</title>
   <link rel="stylesheet" href="iphone.css">
   <link rel="stylesheet" href="cute-styles.css">
+  <link rel="stylesheet" href="heart.css">
 </head>
 <body class="cute-quote">
 
@@ -40,7 +41,26 @@
     <p>这是我们的序章，故事才刚刚开始。</p>
     <a href="quotes.html" class="next-button">继续我们的旅程 →</a>
   </section>
+	<audio id="bg-music" loop>
+	<source src="music/love-song-1.mp3" type="audio/mpeg">
+		<source src="music/love-song-2.mp3" type="audio/mpeg">
+		<source src="music/love-song-3.mp3" type="audio/mpeg">
+  </audio>
+	<!-- 所有功能脚本建议这样排 -->
 
+</body>
+	<!-- 音乐播放器 -->
+
+
+<!-- 控制面板 -->
+<div id="control-panel">
+  <div style="margin-bottom: 8px;" id="song-title">🎶 当前：加载中</div>
+  <input type="range" id="music-progress" value="0" max="100" step="0.1" style="width: 100%;">
+  <div style="margin-top: 8px;">
+    <button id="music-toggle">🎵 播放音乐</button>
+    <button id="next-song">⏭️ 下一首</button>
+  <script src="heart.js"></script>
+  <script src="music-control.js"></script>
   <script src="iphone.js"></script>
 </body>
 </html>

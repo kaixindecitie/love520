@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #ffe6f0 0%, #fff0f5 100%);
+  font-family: "思源宋体", "PingFang SC", "Microsoft YaHei", serif;
+  color: #4a3c3c; /* 深咖啡色 */
+  line-height: 2;
+  font-size: 18px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fffefc;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 24px rgba(255, 192, 203, 0.3),
+    0 0 20px rgba(255, 182, 193, 0.2);
+  animation: fadeInText 2s ease forwards;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #d6336c;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #d6336c, #f06292);
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
+.letter p {
+  margin-bottom: 1.6em;
+  text-indent: 2em;
+  font-size: 1.15rem;
+  opacity: 0;
+  animation: fadeInText 1s forwards;
+}
+
+/* 文字渐显，依次延时 */
+.letter p:nth-child(1) { animation-delay: 0.3s; }
+.letter p:nth-child(2) { animation-delay: 0.6s; }
+.letter p:nth-child(3) { animation-delay: 0.9s; }
+/* 依此类推，方便你自己加 */
+
+.next-link {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.next-link a {
+  background: linear-gradient(45deg, #d6336c, #f06292);
+  padding: 15px 40px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(214, 51, 108, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.next-link a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(240, 100, 150, 0.9);
+}
+
+@keyframes fadeInText {
+  to { opacity: 1; }
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .container {
+    padding: 30px 20px;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+  .letter p {
+    font-size: 1rem;
+    text-indent: 1.5em;
+  }
+  .next-link a {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+/* ExtraLight */
+@font-face {
+  font-family: 'Source Han Serif';
+  src: url('SourceHanSerif-ExtraLight.woff2') format('woff2'),
+       url('SourceHanSerif-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Source Han Serif';
+  src: url('SourceHanSerif-Light.woff2') format('woff2'),
+       url('SourceHanSerif-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'Source Han Serif';
+  src: url('SourceHanSerif-Regular.woff2') format('woff2'),
+       url('SourceHanSerif-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Source Han Serif';
+  src: url('SourceHanSerif-Medium.woff2') format('woff2'),
+       url('SourceHanSerif-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* SemiBold */
+@font-face {
+  font-family: 'Source Han Serif';
+  src: url('SourceHanSerif-SemiBold.woff2') format('woff2'),
+       url('SourceHanSerif-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Source Han Serif';
+  src: url('SourceHanSerif-Bold.woff2') format('woff2'),
+       url('SourceHanSerif-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Heavy / Black */
+@font-face {
+  font-family: 'Source Han Serif';
+  src: url('SourceHanSerif-Heavy.woff2') format('woff2'),
+       url('SourceHanSerif-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
